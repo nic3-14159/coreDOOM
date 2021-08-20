@@ -19,7 +19,6 @@
 
 #include <string.h>
 #include <stdlib.h>
-#include <math.h>
 
 #include "doomdef.h" 
 #include "doomkeys.h"
@@ -2029,7 +2028,7 @@ void G_RecordDemo (char *name)
 
     i = M_CheckParmWithArgs("-maxdemo", 1);
     if (i)
-	maxsize = atoi(myargv[i+1])*1024;
+	maxsize = atol(myargv[i+1])*1024;
     demobuffer = Z_Malloc (maxsize,PU_STATIC,NULL); 
     demoend = demobuffer + maxsize;
 	

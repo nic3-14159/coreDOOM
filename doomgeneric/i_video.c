@@ -41,8 +41,6 @@ rcsid[] = "$Id: i_x.c,v 1.6 1997/02/03 22:45:10 b1 Exp $";
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include <fcntl.h>
-
 #include <stdarg.h>
 
 #include <sys/types.h>
@@ -207,7 +205,7 @@ void I_InitGraphics (void)
 
     i = M_CheckParmWithArgs("-scaling", 1);
     if (i > 0) {
-        i = atoi(myargv[i + 1]);
+        i = atol(myargv[i + 1]);
         fb_scaling = i;
         printf("I_InitGraphics: Scaling factor: %d\n", fb_scaling);
     } else {

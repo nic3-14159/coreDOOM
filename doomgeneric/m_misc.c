@@ -32,7 +32,6 @@
 #include <direct.h>
 #endif
 #else
-#include <sys/stat.h>
 #include <sys/types.h>
 #endif
 
@@ -54,11 +53,9 @@
 
 void M_MakeDirectory(char *path)
 {
-#ifdef _WIN32
-    mkdir(path);
-#else
-    mkdir(path, 0755);
-#endif
+    // This doesn't make too much sense in the context of a payload,
+    // so just return
+    return;
 }
 
 // Check if a file exists
@@ -79,7 +76,7 @@ boolean M_FileExists(char *filename)
         // If we can't open because the file is a directory, the 
         // "file" exists at least!
 
-        return errno == EISDIR;
+        return errno == 21;
     }
 }
 
@@ -189,10 +186,17 @@ char *M_TempFile(char *s)
 
 boolean M_StrToInt(const char *str, int *result)
 {
-    return sscanf(str, " 0x%x", result) == 1
-        || sscanf(str, " 0X%x", result) == 1
-        || sscanf(str, " 0%o", result) == 1
-        || sscanf(str, " %d", result) == 1;
+    // return sscanf(str, " 0x%x", result) == 1
+    //    || sscanf(str, " 0X%x", result) == 1
+    //    || sscanf(str, " 0%o", result) == 1
+    //    || sscanf(str, " %d", result) == 1;
+
+    // The following should do roughly the same as above
+    char *nextchar = NULL;
+    *result = strtol(str, &nextchar, 0);
+    // If nothing was matched, leftover string and original
+    // should be the same
+    return strcmp(str, nextchar) != 0;
 }
 
 void M_ExtractFileBase(char *path, char *dest)

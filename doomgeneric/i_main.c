@@ -19,6 +19,7 @@
 //#include "config.h"
 
 #include <stdio.h>
+#include <libpayload.h>
 
 //#include "doomtype.h"
 //#include "i_system.h"

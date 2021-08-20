@@ -1718,9 +1718,11 @@ static int ParseIntParameter(char *strparm)
     int parm;
 
     if (strparm[0] == '0' && strparm[1] == 'x')
-        sscanf(strparm+2, "%x", &parm);
+        //sscanf(strparm+2, "%x", &parm);
+        parm = strtol(strparm+2, NULL, 16);
     else
-        sscanf(strparm, "%i", &parm);
+        //sscanf(strparm, "%i", &parm);
+        parm = strtol(strparm, NULL, 10);
 
     return parm;
 }
@@ -1763,7 +1765,11 @@ static void SetVariable(default_t *def, char *value)
             break;
 
         case DEFAULT_FLOAT:
-            * (float *) def->location = (float) atof(value);
+            // TODO: libpayload doesn't provide an equivalent
+            // function. Add one if we want to support loading
+            // a config file from CBFS
+            //* (float *) def->location = (float) atof(value);
+            * (float *) def->location = 0.0;
             break;
     }
 }
