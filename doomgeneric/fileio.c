@@ -29,9 +29,11 @@ typedef unsigned int mode_t;
 // Ignore mode for now, assuming behavior for binary mode
 FILE* fopen(const char* filename, const char* mode) {
     FILE* file = malloc(sizeof(FILE));
-    file->buf = cbfs_get_file_content(CBFS_DEFAULT_MEDIA, filename, CBFS_TYPE_RAW, &file->buf_len);
+
+    file->buf = cbfs_map(filename, &file->buf_len);
     if (file->buf == NULL) {
-        free(file);
+	printf("Error!\n");
+	free(file);
         return NULL;
     }
     file->pos = 0;
@@ -44,7 +46,7 @@ int fflush(FILE* stream) {
 }
 
 int fclose(FILE* stream) {
-    free(stream->buf);
+    cbfs_unmap(stream->buf);
     free(stream);
     return 0;
 }
