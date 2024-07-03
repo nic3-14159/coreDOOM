@@ -19,6 +19,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "fileio.h"
+#include <libpayload.h>
 #include <string.h>
 
 #include <stdarg.h>

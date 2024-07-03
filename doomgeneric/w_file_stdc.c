@@ -17,6 +17,7 @@
 //
 
 #include <stdio.h>
+#include "fileio.h"
 
 #include "m_misc.h"
 #include "w_file.h"

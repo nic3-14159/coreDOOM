@@ -18,6 +18,7 @@
 //
 
 #include <stdio.h>
+#include "fileio.h"
 #include <stdlib.h>
 
 #include "deh_misc.h"

@@ -19,6 +19,7 @@
 #define DEH_STR_H
 
 #include <stdio.h>
+#include "fileio.h"
 
 #include "doomfeatures.h"
 

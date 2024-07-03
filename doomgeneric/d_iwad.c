@@ -17,6 +17,7 @@
 //
 
 #include <stdio.h>
+#include "fileio.h"
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>

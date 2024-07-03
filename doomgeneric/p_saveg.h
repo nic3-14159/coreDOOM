@@ -21,6 +21,7 @@
 #define __P_SAVEG__
 
 #include <stdio.h>
+#include "fileio.h"
 
 // maximum size of a savegame description
 

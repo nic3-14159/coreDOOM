@@ -15,6 +15,7 @@
 //
 
 #include <stdio.h>
+#include "fileio.h"
 
 #include "doomtype.h"
 #include "doomkeys.h"

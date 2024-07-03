@@ -19,6 +19,8 @@
 //
 
 #include <stdio.h>
+#include "fileio.h"
+#include <libpayload.h>
 #include <stdlib.h>
 #include <string.h>
 

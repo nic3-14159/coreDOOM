@@ -16,6 +16,7 @@
 //
 
 #include <stdio.h>
+#include "fileio.h"
 #include <stdlib.h>
 
 #ifdef ORIGCODE

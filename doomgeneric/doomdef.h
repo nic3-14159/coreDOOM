@@ -21,6 +21,7 @@
 #define __DOOMDEF__
 
 #include <stdio.h>
+#include "fileio.h"
 #include <string.h>
 
 #include "doomtype.h"

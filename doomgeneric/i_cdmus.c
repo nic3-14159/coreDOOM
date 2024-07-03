@@ -17,6 +17,7 @@
 //
 
 #include <stdio.h>
+#include "fileio.h"
 
 #ifdef ORIGCODE
 #include "SDL.h"

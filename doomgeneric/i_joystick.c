@@ -22,6 +22,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "fileio.h"
 #include <string.h>
 
 #include "doomtype.h"

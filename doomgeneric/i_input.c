@@ -18,6 +18,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdio.h>
+#include "fileio.h"
 
 #include "config.h"
 #include "deh_str.h"

@@ -18,6 +18,7 @@
 
 
 #include <stdio.h>
+#include "fileio.h"
 #include <ctype.h>
 
 #include "deh_main.h"

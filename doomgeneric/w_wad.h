@@ -21,6 +21,7 @@
 #define __W_WAD__
 
 #include <stdio.h>
+#include "fileio.h"
 
 #include "doomtype.h"
 #include "d_mode.h"

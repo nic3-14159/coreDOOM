@@ -20,6 +20,7 @@
 //
 
 #include <stdio.h>
+#include "fileio.h"
 #include <string.h>
 
 #include "i_system.h"

@@ -17,6 +17,7 @@
 //
 
 #include <stdio.h>
+#include "fileio.h"
 
 #include "doomstat.h"
 

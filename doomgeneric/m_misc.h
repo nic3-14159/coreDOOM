@@ -21,6 +21,7 @@
 #define __M_MISC__
 
 #include <stdio.h>
+#include "fileio.h"
 #include <stdarg.h>
 
 #include "doomtype.h"
