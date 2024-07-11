@@ -102,7 +102,5 @@ void V_LoadTintTable(void);
 
 void V_LoadXlaTable(void);
 
-void V_DrawMouseSpeedBox(int speed);
-
 #endif
 
