@@ -403,6 +403,22 @@ boolean D_GrabMouseCallback(void)
     return (gamestate == GS_LEVEL) && !demoplayback && !advancedemo;
 }
 
+void doomgeneric_Tick()
+{
+    // frame syncronous IO operations
+    I_StartFrame ();
+
+    TryRunTics (); // will run at least one tic
+
+    S_UpdateSounds (players[consoleplayer].mo);// move positional sounds
+
+    // Update display, next frame, with current state.
+    if (screenvisible)
+    {
+        D_Display ();
+    }
+}
+
 //
 //  D_DoomLoop
 //
@@ -440,21 +456,7 @@ void D_DoomLoop (void)
         wipegamestate = gamestate;
     }
 
-    while (1)
-    {
-		// frame syncronous IO operations
-		I_StartFrame ();
-
-		TryRunTics (); // will run at least one tic
-
-		S_UpdateSounds (players[consoleplayer].mo);// move positional sounds
-
-		// Update display, next frame, with current state.
-		if (screenvisible)
-		{
-			D_Display ();
-		}
-    }
+    doomgeneric_Tick();
 }
 
 
@@ -1813,14 +1815,16 @@ void D_DoomMain (void)
     {
 		singledemo = true;              // quit after one demo
 		G_DeferedPlayDemo (demolumpname);
-		D_DoomLoop ();  // never returns
+		D_DoomLoop ();
+        return;
     }
 
     p = M_CheckParmWithArgs("-timedemo", 1);
     if (p)
     {
 		G_TimeDemo (demolumpname);
-		D_DoomLoop ();  // never returns
+		D_DoomLoop ();
+        return;
     }
 
     if (startloadgame >= 0)
@@ -1837,6 +1841,6 @@ void D_DoomMain (void)
 			D_StartTitle ();                // start up intro loop
     }
 
-    D_DoomLoop ();  // never returns
+    D_DoomLoop ();
 }
 

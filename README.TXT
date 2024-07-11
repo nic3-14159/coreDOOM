@@ -5,7 +5,6 @@
 To port DOOM easly, I made some changes to source code.
 Now, all you need to do is implement the functions in doomgeneric.h to port DOOM to a new system.
 doomgeneric_win.c is a Windows GDI port. It is also a good example for how to port doomgeneric.
-Sound is not supported for now.
 
 Original readme
 ===============

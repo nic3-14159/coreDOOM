@@ -85,7 +85,7 @@ typedef uint8_t byte;
 
 #include <limits.h>
 
-#ifdef _WIN32
+#if defined(_WIN32) || defined(__DJGPP__)
 
 #define DIR_SEPARATOR '\\'
 #define DIR_SEPARATOR_S "\\"

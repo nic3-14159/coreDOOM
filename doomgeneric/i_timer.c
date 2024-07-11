@@ -22,6 +22,7 @@
 #include "doomgeneric.h"
 
 #include <stdarg.h>
+
 //#include <sys/time.h>
 //#include <unistd.h>
 
@@ -50,7 +51,7 @@ int  I_GetTime (void)
 
     ticks -= basetime;
 
-    return (ticks * TICRATE) / 1000;    
+    return (ticks * TICRATE) / 1000;
 }
 
 

@@ -159,3 +159,13 @@ void DG_SetWindowTitle(const char * title)
 {
     return;
 }
+
+int main(int argc, char **argv)
+{
+    doomgeneric_Create(argc, argv);
+
+    while (1) {
+        doomgeneric_Tick();
+    }
+    return 0;
+}

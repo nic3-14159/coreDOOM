@@ -166,7 +166,7 @@ char *M_TempFile(char *s)
 {
     char *tempdir;
 
-#ifdef _WIN32
+#if defined(_WIN32) || defined(__DJGPP__)
 
     // Check the TEMP environment variable to find the location.
 

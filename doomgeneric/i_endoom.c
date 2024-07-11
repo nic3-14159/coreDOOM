@@ -27,6 +27,12 @@
 #include "txt_main.h"
 #endif
 
+
+#ifdef __DJGPP__
+#include <go32.h>
+#endif  // __DJGPP__
+
+
 #define ENDOOM_W 80
 #define ENDOOM_H 25
 
@@ -77,6 +83,20 @@ void I_Endoom(byte *endoom_data)
     // Shut down text mode screen
 
     TXT_Shutdown();
+
+#elif defined(__DJGPP__)
+
+    int y;
+
+    // move cursor to bottom
+    // there's a direct call for moving cursor somewhere but this is simpler to write
+    for (y = 0; y < ENDOOM_H; y++) {
+        puts("\n");
+    }
+
+    // allegro exit should have been run already and so we should be in text mode again
+    movedata(_my_ds(), (unsigned) endoom_data, _dos_ds, 0xB8000UL, ENDOOM_W * ENDOOM_H * 2);
+
 #endif
 }
 

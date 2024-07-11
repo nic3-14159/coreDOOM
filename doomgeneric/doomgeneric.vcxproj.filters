@@ -78,9 +78,6 @@
     <ClCompile Include="i_joystick.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="i_main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="i_scale.c">
       <Filter>Source Files</Filter>
     </ClCompile>
