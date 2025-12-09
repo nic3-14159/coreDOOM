@@ -71,7 +71,7 @@ typedef bool boolean;
 #else
 
 #include <stdbool.h>
-typedef bool boolean;
+typedef int boolean;
 
 #endif
 
